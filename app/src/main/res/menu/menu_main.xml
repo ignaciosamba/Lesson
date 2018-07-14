@@ -17,4 +17,9 @@
         android:orderInCategory="3"
         android:title="@string/action_table"
         />
+    <item
+        android:id="@+id/action_singout"
+        android:orderInCategory="4"
+        android:title="@string/action_singout"
+        />
 </menu>

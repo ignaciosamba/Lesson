@@ -2,6 +2,7 @@ package com.example.isambataro.lesson2.view.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +13,8 @@ import android.view.MenuItem;
 import android.widget.Button;
 
 import com.example.isambataro.lesson2.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends BaseActivity {
 
@@ -51,4 +54,19 @@ public class MainActivity extends BaseActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         return super.onOptionsItemSelected(item);
     }
+
+    FirebaseAuth.AuthStateListener authListener = new FirebaseAuth.AuthStateListener() {
+        @Override
+        public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+            FirebaseUser user = firebaseAuth.getCurrentUser();
+            System.out.println("SAMBA LOGOUT 2");
+            if (user == null) {
+                // user auth state is changed - user is null
+                // launch login activity
+                System.out.println("SAMBA LOGOUT 3");
+                startActivity(new Intent(MainActivity.this, LogInActivity.class));
+                finish();
+            }
+        }
+    };
 }

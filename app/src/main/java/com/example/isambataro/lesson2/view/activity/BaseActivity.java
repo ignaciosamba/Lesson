@@ -2,12 +2,15 @@ package com.example.isambataro.lesson2.view.activity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.example.isambataro.lesson2.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class BaseActivity extends AppCompatActivity {
 
@@ -49,6 +52,29 @@ public class BaseActivity extends AppCompatActivity {
         }
         if (id == R.id.action_table) {
             Intent intent = new Intent(BaseActivity.this, TableActivity.class);
+            startActivity(intent);
+            return true;
+        }
+        if (id == R.id.action_singout) {
+            FirebaseAuth auth = FirebaseAuth.getInstance();
+            auth.signOut();
+            System.out.println("SAMBA LOGOUT 1");
+            // this listener will be called when there is change in firebase user session
+//            FirebaseAuth.AuthStateListener authListener = new FirebaseAuth.AuthStateListener() {
+//                @Override
+//                public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+//                    FirebaseUser user = firebaseAuth.getCurrentUser();
+//                    System.out.println("SAMBA LOGOUT 2");
+//                    if (user == null) {
+//                        // user auth state is changed - user is null
+//                        // launch login activity
+//                        System.out.println("SAMBA LOGOUT 3");
+//                        startActivity(new Intent(BaseActivity.this, LogInActivity.class));
+//                        finish();
+//                    }
+//                }
+//            };
+            Intent intent = new Intent(BaseActivity.this, LogInActivity.class);
             startActivity(intent);
             return true;
         }

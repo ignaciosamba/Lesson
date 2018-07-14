@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "577033430391",
+    "firebase_url": "https://lesson-6665b.firebaseio.com",
+    "project_id": "lesson-6665b",
+    "storage_bucket": "lesson-6665b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:577033430391:android:a3adb8ebf8a26844",
+        "android_client_info": {
+          "package_name": "com.example.isambataro.lesson2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "577033430391-cloheh512941fa9l4mdmu3n0ukm1vrom.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDP-Vmw2ssijYGR3-McCHgRE_WXOni76aM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
